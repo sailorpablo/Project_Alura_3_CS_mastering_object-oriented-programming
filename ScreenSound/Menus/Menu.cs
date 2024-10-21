@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenSound.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,11 @@ namespace ScreenSound.Menus
             Console.WriteLine(titulo);
             Console.WriteLine(asteriscos + "\n");
 
+        }
+
+        public virtual void Executar(Dictionary<string, Banda> bandasRegistradas)
+        {
+            Console.Clear();
         }
 
 
