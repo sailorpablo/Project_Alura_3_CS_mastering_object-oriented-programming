@@ -1,10 +1,19 @@
 ﻿using ScreenSound.Modelos;
 using ScreenSound.Menus;
+using OpenAI;
+using OpenAI.Chat;
+using System.ClientModel;
+//sk-proj-oOeLVsQe7Q9k7VI4curnlG95D6nIe4fOtxr-tgnI8rmffmbnkrvzRLcrij__rXeAHQ20mKFEv3T3BlbkFJewj_IaxqlX9nJVn8o_AUaH51PkfVj3EsjuQ1PIGSNIGeSD8JGO8UCafoeOfaOyMOJoS-tFMw
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+
+      //  OpenAIClient client = new(Environment.GetEnvironmentVariable("sk-proj-oOeLVsQe7Q9k7VI4curnlG95D6nIe4fOtxr-tgnI8rmffmbnkrvzRLcrij__rXeAHQ20mKFEv3T3BlbkFJewj_IaxqlX9nJVn8o_AUaH51PkfVj3EsjuQ1PIGSNIGeSD8JGO8UCafoeOfaOyMOJoS-tFMw"));
+
+ 
+
         Banda ira = new Banda("Ira!");
         ira.AdicionarNota(new Avaliacao(10));
         ira.AdicionarNota(new Avaliacao(8));
@@ -19,6 +28,7 @@ internal class Program
         opcoesMenu.Add(3, new MenuBandasRegistradas());
         opcoesMenu.Add(4, new MenuAvaliarBanda());
         opcoesMenu.Add(5, new MenuExibirDetalhes());
+        opcoesMenu.Add(6, new MenuAvaliarAlbum());
         opcoesMenu.Add(-1, new MenuSair());
 
 
@@ -50,6 +60,7 @@ internal class Program
             Console.WriteLine("Digite 3 para mostrar todas as bandas");
             Console.WriteLine("Digite 4 para avaliar uma banda");
             Console.WriteLine("Digite 5 para exibir os detalhes de uma banda");
+            Console.WriteLine("Digite 6 para avaliar um album");
             Console.WriteLine("Digite -1 para sair");
 
             Console.Write("\nDigite a sua opção: ");
@@ -74,6 +85,6 @@ internal class Program
 
         }
 
-        ExibirOpcoesDoMenu();
+        //ExibirOpcoesDoMenu();
     }
 }
