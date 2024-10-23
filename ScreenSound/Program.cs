@@ -10,9 +10,17 @@ internal class Program
     private static void Main(string[] args)
     {
 
-      //  OpenAIClient client = new(Environment.GetEnvironmentVariable("sk-proj-oOeLVsQe7Q9k7VI4curnlG95D6nIe4fOtxr-tgnI8rmffmbnkrvzRLcrij__rXeAHQ20mKFEv3T3BlbkFJewj_IaxqlX9nJVn8o_AUaH51PkfVj3EsjuQ1PIGSNIGeSD8JGO8UCafoeOfaOyMOJoS-tFMw"));
+        OpenAIClient client = new OpenAIClient("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");
 
- 
+        var openAiResponse =  client.GetChatClient("gpt-3.5-turbo");
+
+        ChatCompletion completion = openAiResponse.CompleteChat(
+
+                new UserChatMessage("Pode me ajudar?")
+
+            );
+
+        Console.WriteLine($"{completion.Role}: {completion.Content[0].Text}");
 
         Banda ira = new Banda("Ira!");
         ira.AdicionarNota(new Avaliacao(10));
