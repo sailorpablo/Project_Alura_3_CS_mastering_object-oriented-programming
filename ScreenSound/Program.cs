@@ -10,17 +10,7 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        OpenAIClient client = new OpenAIClient("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");
-
-        var openAiResponse =  client.GetChatClient("gpt-3.5-turbo");
-
-        ChatCompletion completion = openAiResponse.CompleteChat(
-
-                new UserChatMessage("Pode me ajudar?")
-
-            );
-
-        Console.WriteLine($"{completion.Role}: {completion.Content[0].Text}");
+        
 
         Banda ira = new Banda("Ira!");
         ira.AdicionarNota(new Avaliacao(10));
@@ -93,6 +83,6 @@ internal class Program
 
         }
 
-        //ExibirOpcoesDoMenu();
+        ExibirOpcoesDoMenu();
     }
 }

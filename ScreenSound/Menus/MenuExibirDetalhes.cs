@@ -27,7 +27,12 @@ namespace ScreenSound.Menus
                 {
                     Console.WriteLine($"{album.Nome} -> {album.Media}");
                 }
+                HugginFaceAI hugginFaceAI = new HugginFaceAI();
 
+                hugginFaceAI.Request($"Um resumo sobre a banda {nomeDaBanda}");
+
+
+                Console.WriteLine("Aqui um resumo da banda: " + hugginFaceAI.Resultado);
 
                 Console.WriteLine("Digite uma tecla para votar ao menu principal");
                 Console.ReadKey();
